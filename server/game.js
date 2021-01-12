@@ -7,9 +7,18 @@ module.exports = {
 }
 
 function initGame() {
+  sleep(3000);
   const state = createGameState()
   randomFood(state);
   return state;
+}
+
+function sleep(milliseconds) {
+  const date = Date.now();
+  let currentDate = null;
+  do {
+    currentDate = Date.now();
+  } while (currentDate - date < milliseconds);
 }
 
 function createGameState() {
